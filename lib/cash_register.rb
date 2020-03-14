@@ -2,7 +2,8 @@ class CashRegister
   
   attr_accessor :total, :discount, :items
 
-
+#num=0 is no discount
+#num=1 is 20% employee discount 
   def initialize(num)
     if num=0 
       @total=num 
