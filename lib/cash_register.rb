@@ -36,13 +36,14 @@ class CashRegister
       
     else 
       @disc_amount=( @discount * @price ) / 100
-      @total=@total - @disc_amount.to_f 
+      @total=@total - @disc_amount
       
       if @disc_amount > 0
         return "After the discount, the total comes to $#{@total}."
       else
         return "There is no discount to apply."
       end 
+      return "There is no discount to apply."
     end
   end 
 
