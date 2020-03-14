@@ -8,25 +8,20 @@ class CashRegister
       @total=0 
       @discount=num
       @items=[]
-      @tot_arr=[]
+      
       
       
   end 
 
-  def add_item(title,quantity=1,price)
+  def add_item(title,price,quantity=1)
     @price=price
-
-    return @total= @total + (quantity * price)
-    # @similar_arr=[] 
-    # while quantity!=0 do
-    #   @similar_arr << title
-    #   quantity -= 1 
-    # end
-
-    # @similar_arr.each do |e|
-    #   @items << e 
-    # end 
-
+    num=quantity
+    
+    num.times do 
+      @items << title 
+    end 
+    
+    puts " num: #{num}  and item_Array:#{@items}"
     
   end 
 
