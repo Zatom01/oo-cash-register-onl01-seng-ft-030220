@@ -1,6 +1,6 @@
 class CashRegister
   
-  attr_accessor :total, :discount, :items
+  attr_accessor :total, :discount, :items, :price
 
 
   def initialize(num=0)
@@ -8,10 +8,14 @@ class CashRegister
       @total=0 
       @discount=num
       @items=[]
+      @tot_arr=[]
+      
       
   end 
 
   def add_item(title,quantity=1,price)
+    @price=price
+
     return @total= @total + (quantity * price)
     # @similar_arr=[] 
     # while quantity!=0 do
@@ -27,16 +31,18 @@ class CashRegister
   end 
 
   def apply_discount
-    
-    @previous_total=@total
-    @total=@total- ((@discount/100) * @total).to_i
-    
-    if @total<@previous_total
-      puts "After the discount, the total comes to $#{@total}."
+
+    @disc_amount=( @discount * @price ) / 100
+
+    @total=@total - @disc_amount
+    if @disc_amount > 0
+      puts "After the discount, the total comes to #{@total}"
       return @total
     else
       puts "There is no discount to apply."
+      return @total
     end 
+
 
 
   end
