@@ -21,7 +21,6 @@ class CashRegister
       @items << title 
     end 
     
-    puts " num: #{num}  and item_Array:#{@items}"
     
   end 
 
