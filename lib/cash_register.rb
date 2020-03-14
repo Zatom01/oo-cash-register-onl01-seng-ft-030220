@@ -43,7 +43,6 @@ class CashRegister
       else
         return "There is no discount to apply."
       end 
-      return "There is no discount to apply."
     end
   end 
 
