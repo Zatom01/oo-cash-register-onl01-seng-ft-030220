@@ -36,7 +36,7 @@ class CashRegister
 
     @total=@total - @disc_amount
     if @disc_amount > 0
-      puts "After the discount, the total comes to $ #{@total}."
+      puts "After the discount, the total comes to $#{@total}."
       return @total
     else
       puts "There is no discount to apply."
