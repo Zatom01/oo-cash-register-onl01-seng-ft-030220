@@ -8,6 +8,7 @@ class CashRegister
       @total=num 
       @discount=0 
       @items=[]
+      
     elsif num==1
 
       @total=0 
