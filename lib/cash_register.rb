@@ -4,12 +4,12 @@ class CashRegister
 
 
   def initialize(num=0)
-    if num==0 
+    if num
       @total=num 
       @discount=0 
       @items=[]
       
-    elsif num==1
+    elsif num==20
 
       @total=0 
       @discount=0.2
