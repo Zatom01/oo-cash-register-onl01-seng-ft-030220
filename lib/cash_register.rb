@@ -2,18 +2,19 @@ class CashRegister
   
   attr_accessor :total, :discount, :items
 
-#num=0 is no discount
-#num=1 is 20% employee discount 
+
   def initialize(num)
-    if num=0 
+    if num==0 
       @total=num 
       @discount=0 
       @items=[]
-    elsif num=1
+    elsif num==1
+
       @total=0 
-      @discount=20
+      @discount=0.2
       @items=[]
     end 
+      
   end 
 
   def add_item(title,quantity=1,price)
@@ -32,9 +33,15 @@ class CashRegister
   end 
 
   def apply_discount
-    @total=@total- (0.2 * @total).to_i
-    puts "After the discount, the total comes to $#{@total}."
+    if @discount==0.2
+      @total=@total- (@discount * @total).to_i
+      puts "After the discount, the total comes to $#{@total}."
     return @total
+  
+    else 
+      puts "There is no discount to apply."
+      return @total
+    end
   end 
 
   def total
