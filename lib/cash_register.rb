@@ -3,10 +3,16 @@ class CashRegister
   attr_accessor :total, :discount, :items
 
 
-  def initialize(num=0)
-    @total=num
-    @discount=20
-    @items=[]
+  def initialize(num)
+    if num=0 
+      @total=num 
+      @discount=0 
+      @items=[]
+    elsif num=1
+      @total=0 
+      @discount=20
+      @items=[]
+    end 
   end 
 
   def add_item(title,quantity=1,price)
