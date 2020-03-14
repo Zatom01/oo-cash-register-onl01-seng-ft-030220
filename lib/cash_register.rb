@@ -4,17 +4,10 @@ class CashRegister
 
 
   def initialize(num=0)
-    if num
-      @total=num 
-      @discount=0 
-      @items=[]
-      
-    elsif num==20
-
+  
       @total=0 
-      @discount=0.2
+      @discount=num
       @items=[]
-    end 
       
   end 
 
@@ -34,10 +27,10 @@ class CashRegister
   # end 
 
   def apply_discount
-    if @discount==0.2
-      @total=@total- (@discount * @total).to_i
+    if @discount==20
+      @total=@total- ((@discount/100) * @total).to_i
       puts "After the discount, the total comes to $#{@total}."
-    return @total
+      return @total
   
     else 
       puts "There is no discount to apply."
