@@ -59,6 +59,7 @@ class CashRegister
     
     @total = @total - ( @items_price[-1] * @items_quantity[-1] )
     
+    
   end 
   
 end
