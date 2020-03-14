@@ -46,7 +46,7 @@ class CashRegister
   end
 
   def total
-    @total
+    @total.to_i
   end 
 
   def items 
