@@ -28,9 +28,14 @@ class CashRegister
 
   def apply_discount
     
+    @previous_total=@total
     @total=@total- ((@discount/100) * @total).to_i
-    puts "After the discount, the total comes to $#{@total}."
-    return @total
+    
+    if @total<@previous_total
+      puts "After the discount, the total comes to $#{@total}."
+      return @total
+    else
+      puts ""
 
 
   end
