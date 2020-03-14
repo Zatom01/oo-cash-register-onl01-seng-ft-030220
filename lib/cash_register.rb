@@ -38,8 +38,8 @@ class CashRegister
     if @disc_amount > 0
       return "After the discount, the total comes to $#{@total}."
     else
-      puts "There is no discount to apply."
-      return @total
+      return "There is no discount to apply."
+      
     end 
 
 
