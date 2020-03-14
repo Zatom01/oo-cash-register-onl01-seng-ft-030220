@@ -34,7 +34,7 @@ class CashRegister
     @total=@total - @disc_amount
     if @disc_amount > 0
       return "After the discount, the total comes to $#{@total}."
-    elsif @discount==0
+    elsif @discount==0.0
     
       return "There is no discount to apply."
     end 
