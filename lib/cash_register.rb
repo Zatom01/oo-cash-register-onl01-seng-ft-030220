@@ -9,8 +9,7 @@ class CashRegister
       @discount=num
       @items=[]
       @items_price=[]
-      
-      
+      @items_quantity=[]
       
   end 
 
@@ -22,13 +21,14 @@ class CashRegister
     num.times do 
       @items << title
       @items_price << price
+      @items_quantity << quantity
     end 
     
     @total=@total + (price * quantity)
-    
-    
-    
+  
   end 
+
+
 
   def apply_discount
 
@@ -38,25 +38,26 @@ class CashRegister
     if @disc_amount > 0
       return "After the discount, the total comes to $#{@total}."
     else
-     
-    
       return "There is no discount to apply."
     end 
-
-
   end
+
+
 
   def total
     @total
   end 
+  
+  
 
   def items 
     @items
   end 
   
+  
   def void_last_transaction
     
-    @total = @total - @items_price[-1]
+    @total = @total - ( @items_price[-1] * items_quantity )
   end 
   
 end
