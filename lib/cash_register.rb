@@ -16,6 +16,7 @@ class CashRegister
   def add_item(title,price,quantity=1)
     @price=price
     num=quantity
+    @last_item_price=price
     
     num.times do 
       @items << title 
@@ -50,7 +51,7 @@ class CashRegister
   end 
   
   def void_last_transaction
-    
-  
+    @total = @total - @last_item_price
+  end 
   
 end
