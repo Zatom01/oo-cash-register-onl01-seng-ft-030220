@@ -36,6 +36,7 @@ class CashRegister
       return @total
     else
       puts "There is no discount to apply."
+    end 
 
 
   end
